@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edy_Santoso | Portfolio - IT Infrastructure & DevOps Engineer</title>
+    <title>Beranda | Edy_Santoso - IT Infrastructure & DevOps Engineer</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* CSS Dasar untuk Portofolio */
+        /* CSS Tambahan & Penyesuaian Layout */
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: 'Arial', sans-serif; background-color: #0b0b0b; color: #e0e0e0; line-height: 1.6; }
         .container { width: 90%; max-width: 1200px; margin: 0 auto; }
@@ -42,11 +43,11 @@
         /* Footer */
         footer { background: #0a0a0a; color: #888; padding: 40px 0 20px 0; border-top: 1px solid #1a1a1a; }
         
-        /* Modal Lightbox */
-        #imgModal { display: none; position: fixed; z-index: 9999; padding-top: 50px; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.9); }
-        #modalImg { margin: auto; display: block; max-width: 90%; max-height: 85vh; border-radius: 4px; border: 1px solid #333; }
+        /* Modal Lightbox & CV Preview */
+        #imgModal { display: none; position: fixed; z-index: 9999; padding-top: 40px; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.92); }
+        #modalImg { margin: auto; display: block; max-width: 90%; max-height: 82vh; border-radius: 4px; border: 1px solid #333; }
         #cvPreviewContainer { display: none; width: 85%; height: 82vh; margin: auto; }
-        .close-btn { position: absolute; top: 20px; right: 35px; color: #00ff66; font-size: 40px; font-weight: bold; cursor: pointer; }
+        .close-btn { position: absolute; top: 20px; right: 35px; color: #00ff66; font-size: 40px; font-weight: bold; cursor: pointer; z-index: 10000; }
     </style>
 </head>
 <body>
@@ -79,7 +80,7 @@
                     Selamat datang di portal personal saya. Spesialis dalam pengelolaan infrastruktur server Linux/Windows, otomatisasi berbasis Python/DevOps, routing jaringan, serta pemeliharaan hardware dan sistem IT.
                 </p>
                 <div style="margin-top: 25px;">
-                    <a href="#cv-preview" onclick="openCvModal(); return false;" class="btn-secondary" style="display: inline-block; padding: 10px 20px; background: transparent; color: #00ff66; border: 1px solid #00ff66; text-decoration: none; border-radius: 4px;"><i class="fas fa-eye"></i> Preview CV</a>
+                    <a href="#cv-preview" onclick="openCvModal(); return false;" class="btn-secondary" style="display: inline-block; padding: 10px 20px; background: transparent; color: #00ff66; border: 1px solid #00ff66; text-decoration: none; border-radius: 4px; font-family: inherit;"><i class="fas fa-eye"></i> Preview CV</a>
                 </div>
             </div>
         </section>
@@ -115,99 +116,225 @@
                 <div class="profile-grid">
                     
                     <!-- Proyek 1: FMS Senopati -->
-                    <div class="profile-card">
+                    <div class="profile-card" style="padding: 20px;">
                         <h3><i class="fas fa-server"></i> Fleet Management System (FMS) "Senopati"</h3>
                         <p style="font-size: 14px; margin-bottom: 15px; color: #ccc;">
                             Perancangan infrastruktur server, pengujian lapangan, pelatihan karyawan, hingga tahap *go-live* untuk sistem Fleet Management System (FMS) bernama <strong>Senopati</strong> di PAMA Kide Site Batukajang.
                         </p>
+
                         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; margin-bottom: 15px;">
                             <div style="overflow: hidden; border-radius: 4px; border: 1px solid #333; height: 110px;">
-                                <img src="images/fms_server.jpg" alt="Perapian Server FMS" style="width: 100%; height: 100%; object-fit: cover; display: block; cursor: pointer;" onclick="openModal(this);">
+                                <img src="images/fms_server.jpg" alt="Perapian Server FMS" style="width: 100%; height: 100%; object-fit: cover; display: block; cursor: pointer;" onclick="openModal(this);" title="Klik untuk preview">
                             </div>
                             <div style="overflow: hidden; border-radius: 4px; border: 1px solid #333; height: 110px;">
-                                <img src="images/fms_trial.jpg" alt="Trial Unit Lapangan" style="width: 100%; height: 100%; object-fit: cover; display: block; cursor: pointer;" onclick="openModal(this);">
+                                <img src="images/fms_trial.jpg" alt="Trial Unit Lapangan" style="width: 100%; height: 100%; object-fit: cover; display: block; cursor: pointer;" onclick="openModal(this);" title="Klik untuk preview">
                             </div>
                             <div style="overflow: hidden; border-radius: 4px; border: 1px solid #333; height: 110px;">
-                                <img src="images/fms_monitoring.jpg" alt="Monitoring Screen & Control Room" style="width: 100%; height: 100%; object-fit: cover; display: block; cursor: pointer;" onclick="openModal(this);">
+                                <img src="images/fms_monitoring.jpg" alt="Monitoring Screen & Control Room" style="width: 100%; height: 100%; object-fit: cover; display: block; cursor: pointer;" onclick="openModal(this);" title="Klik untuk preview">
                             </div>
                             <div style="overflow: hidden; border-radius: 4px; border: 1px solid #333; height: 110px;">
-                                <img src="images/fms_training.jpg" alt="Pembimbingan Karyawan" style="width: 100%; height: 100%; object-fit: cover; display: block; cursor: pointer;" onclick="openModal(this);">
+                                <img src="images/fms_training.jpg" alt="Pembimbingan Karyawan" style="width: 100%; height: 100%; object-fit: cover; display: block; cursor: pointer;" onclick="openModal(this);" title="Klik untuk preview">
                             </div>
                         </div>
+
+                        <div style="background: #0d0d0d; border: 1px solid #222; padding: 12px; border-radius: 4px; margin-bottom: 15px;">
+                            <strong style="font-size: 13px; color: #00ff66; display: block; margin-bottom: 8px;"><i class="fas fa-route"></i> Alur Pemantauan Unit (Mining Tracking Workflow):</strong>
+                            <ol style="font-size: 12px; color: #aaa; padding-left: 18px; line-height: 1.5;">
+                                <li><strong>Pit Stop / Standby:</strong> Unit melakukan persiapan, pengecekan awal, dan siap memasuki siklus kerja tambang.</li>
+                                <li><strong>Loading (Muat):</strong> Unit pengangkutan menuju front tambang untuk proses pemuatan material oleh Excavator/Loader.</li>
+                                <li><strong>Hauling (Angkut):</strong> Pergerakan ritase unit angkut (*Dump Truck* / HD) menyusuri jalur *hauling road*.</li>
+                                <li><strong>Dumping (Bongkar Muat):</strong> Unit tiba di stockpile atau disposal untuk melakukan pembongkaran material secara terpantau.</li>
+                            </ol>
+                        </div>
+
+                        <p style="font-size: 13px; color: #aaa; line-height: 1.6;">
+                            <strong>Tahapan Implementasi Proyek:</strong>
+                            <br>• <strong>Infrastruktur & Server:</strong> Perakitan, instalasi OS/layanan, serta perapian kabel rak server utama.
+                            <br>• <strong>Trial Lapangan:</strong> Pemasangan dan kalibrasi perangkat keras FMS pada unit kendaraan tambang.
+                            <br>• <strong>Pembimbingan & Training:</strong> Transfer pengetahuan dan pelatihan operasional kepada karyawan & tim lapangan.
+                            <br>• <strong>Go-Live & Monitoring:</strong> Pengawalan penuh hingga sistem beroperasi aktif di ruang kontrol.
+                        </p>
                     </div>
 
                     <!-- Proyek 2: MOSENTO BSS -->
-                    <div class="profile-card">
-                        <h3><i class="fas fa-microchip"></i> MOSENTO (Monitoring Kesehatan Unit)</h3>
+                    <div class="profile-card" style="padding: 20px;">
+                        <h3><i class="fas fa-microchip"></i> MOSENTO (Monitoring Kesehatan Unit Otomatis)</h3>
                         <p style="font-size: 14px; margin-bottom: 15px; color: #ccc;">
-                            Pengembangan sistem VHMS Check otomatis bernama <strong>MOSENTO</strong> di PT. Bina Sarana Sukses (BSS).
+                            Pengembangan sistem VHMS Check otomatis bernama <strong>MOSENTO</strong> saat bertugas di PT. Bina Sarana Sukses (BSS). Mencakup perakitan perangkat, uji coba, hingga meeting penentuan parameter monitoring data.
                         </p>
+
                         <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 15px;">
                             <div style="overflow: hidden; border-radius: 4px; border: 1px solid #333; height: 120px;">
-                                <img src="images/perakitan.jpg" alt="Perakitan Hardware Mosento" style="width: 100%; height: 100%; object-fit: cover; display: block; cursor: pointer;" onclick="openModal(this);">
+                                <img src="images/perakitan.jpg" alt="Perakitan Hardware Mosento" style="width: 100%; height: 100%; object-fit: cover; display: block; cursor: pointer;" onclick="openModal(this);" title="Klik untuk preview">
                             </div>
                             <div style="overflow: hidden; border-radius: 4px; border: 1px solid #333; height: 120px;">
-                                <img src="images/Meeting.jpg" alt="Meeting Koordinasi Tim" style="width: 100%; height: 100%; object-fit: cover; display: block; cursor: pointer;" onclick="openModal(this);">
+                                <img src="images/Meeting.jpg" alt="Meeting Koordinasi Tim" style="width: 100%; height: 100%; object-fit: cover; display: block; cursor: pointer;" onclick="openModal(this);" title="Klik untuk preview">
+                            </div>
+                            <div style="overflow: hidden; border-radius: 4px; border: 1px solid #333; height: 120px;">
+                                <img src="images/Diskusi.jpg" alt="Diskusi Parameter Data" style="width: 100%; height: 100%; object-fit: cover; display: block; cursor: pointer;" onclick="openModal(this);" title="Klik untuk preview">
+                            </div>
+                            <div style="overflow: hidden; border-radius: 4px; border: 1px solid #333; height: 120px;">
+                                <img src="images/Unit.jpg" alt="Unit Alat Berat BSS" style="width: 100%; height: 100%; object-fit: cover; display: block; cursor: pointer;" onclick="openModal(this);" title="Klik untuk preview">
                             </div>
                         </div>
+
+                        <div style="background: #0d0d0d; border: 1px solid #222; padding: 12px; border-radius: 4px; margin-bottom: 15px;">
+                            <strong style="font-size: 13px; color: #00ff66; display: block; margin-bottom: 8px;"><i class="fas fa-project-diagram"></i> Alur Kerja Sistem (Workflow):</strong>
+                            <ol style="font-size: 12px; color: #aaa; padding-left: 18px; line-height: 1.5;">
+                                <li><strong>Unit (HD/Dozer/Excavator):</strong> Mengirimkan data kesehatan unit secara otomatis setiap kali mendeteksi Access Point (AP).</li>
+                                <li><strong>Server Sementara:</strong> Menampung dan memproses data dari lapangan di area site.</li>
+                                <li><strong>Internet & Server Utama:</strong> Data disinkronkan melalui internet dan disimpan terpusat di Server Utama.</li>
+                                <li><strong>User / Dashboard:</strong> Tim dapat langsung memantau kesehatan seluruh unit secara <i>real-time</i> dari ruang kontrol.</li>
+                            </ol>
+                        </div>
+
+                        <p style="font-size: 13px; color: #aaa; line-height: 1.6;">
+                            <strong>Tahapan & Cakupan Proyek:</strong>
+                            <br>• <strong>Meeting & Analisis:</strong> Diskusi tim untuk merumuskan parameter data kesehatan unit yang krusial.
+                            <br>• <strong>Perakitan & Rangkaian:</strong> Perakitan modul mikrokontroler/perangkat keras VHMS check.
+                            <br>• <strong>Trial & Pengujian:</strong> Uji coba fungsionalitas sistem secara mendalam.
+                            <br>• <strong>Implementasi Unit:</strong> Integrasi dan pengujian langsung pada unit-unit alat berat di lapangan.
+                        </p>
                     </div>
 
-                    <!-- Proyek 3: Fuel Management System -->
-                    <div class="profile-card">
+                    <!-- Proyek 3: Fuel Management System (FMS) -->
+                    <div class="profile-card" style="padding: 20px;">
                         <h3><i class="fas fa-gas-pump"></i> Fuel Management System (FMS)</h3>
                         <p style="font-size: 14px; margin-bottom: 15px; color: #ccc;">
-                            Pengembangan sistem manajemen bahan bakar terintegrasi dengan verifikasi RFID dan cetak struk otomatis.
+                            Pengembangan sistem manajemen bahan bakar terintegrasi (Fuel Management System) mulai dari perakitan perangkat keras, *development* sistem, hingga implementasi dan *go-live* yang diaplikasikan dan digunakan di berbagai site operasional.
                         </p>
+
                         <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 15px;">
                             <div style="overflow: hidden; border-radius: 4px; border: 1px solid #333; height: 120px;">
-                                <img src="images/Perakitan_fms.jpg" alt="Perakitan Hardware FMS" style="width: 100%; height: 100%; object-fit: cover; display: block; cursor: pointer;" onclick="openModal(this);">
+                                <img src="images/Perakitan_fms.jpg" alt="Perakitan Hardware FMS" style="width: 100%; height: 100%; object-fit: cover; display: block; cursor: pointer;" onclick="openModal(this);" title="Klik untuk preview">
                             </div>
                             <div style="overflow: hidden; border-radius: 4px; border: 1px solid #333; height: 120px;">
-                                <img src="images/Go-Live_fms.jpg" alt="Go-Live FMS" style="width: 100%; height: 100%; object-fit: cover; display: block; cursor: pointer;" onclick="openModal(this);">
+                                <img src="images/Development_fms.jpg" alt="Development & Testing" style="width: 100%; height: 100%; object-fit: cover; display: block; cursor: pointer;" onclick="openModal(this);" title="Klik untuk preview">
+                            </div>
+                            <div style="overflow: hidden; border-radius: 4px; border: 1px solid #333; height: 120px;">
+                                <img src="images/Implementasi_fms.jpg" alt="Implementasi Lapangan Site" style="width: 100%; height: 100%; object-fit: cover; display: block; cursor: pointer;" onclick="openModal(this);" title="Klik untuk preview">
+                            </div>
+                            <div style="overflow: hidden; border-radius: 4px; border: 1px solid #333; height: 120px;">
+                                <img src="images/Go-Live_fms.jpg" alt="Go-Live & Operasional" style="width: 100%; height: 100%; object-fit: cover; display: block; cursor: pointer;" onclick="openModal(this);" title="Klik untuk preview">
                             </div>
                         </div>
+
+                        <div style="background: #0d0d0d; border: 1px solid #222; padding: 12px; border-radius: 4px; margin-bottom: 15px;">
+                            <strong style="font-size: 13px; color: #00ff66; display: block; margin-bottom: 8px;"><i class="fas fa-id-card"></i> Alur Proses Pengisian BBM (RFID Fuel Workflow):</strong>
+                            <ol style="font-size: 12px; color: #aaa; padding-left: 18px; line-height: 1.5;">
+                                <li><strong>Tab RFID (Identifikasi Driver):</strong> Driver melakukan tap kartu RFID pada reader untuk memvalidasi identitas nama driver dan NRP secara otomatis.</li>
+                                <li><strong>Proses Pengisian (Dispensing):</strong> Setelah data driver terverifikasi oleh sistem, proses pengisian bahan bakar ke unit alat berat dimulai.</li>
+                                <li><strong>Pencetakan Struk (Printing):</strong> Mesin secara otomatis mencetak struk/nota pengisian yang memuat detail volume bahan bakar, waktu, serta informasi driver.</li>
+                                <li><strong>Penyimpanan Database (Logging):</strong> Seluruh data transaksi pengisian tersimpan secara otomatis dan terpusat ke dalam database untuk kebutuhan auditing.</li>
+                            </ol>
+                        </div>
+
+                        <p style="font-size: 13px; color: #aaa; line-height: 1.6;">
+                            <strong>Tahapan & Cakupan Proyek:</strong>
+                            <br>• <strong>Perakitan Hardware:</strong> Perakitan komponen kontroler, panel, dan wiring sistem ukur bahan bakar.
+                            <br>• <strong>Software & Development:</strong> Pengembangan sistem dan integrasi modul pencatatan data BBM.
+                            <br>• <strong>Deployment & Go-Live:</strong> Pemasangan di lapangan dan penerapan operasional yang sukses digunakan di berbagai site.
+                        </p>
                     </div>
 
-                    <!-- Proyek 4: Speed Awareness Monitor (SAM) -->
-                    <div class="profile-card">
+                    <!-- Proyek 4: Speed Awareness Monitor (SAM) - PT. Satnetcom -->
+                    <div class="profile-card" style="padding: 20px;">
                         <h3><i class="fas fa-tachometer-alt"></i> Speed Awareness Monitor (SAM)</h3>
                         <p style="font-size: 14px; margin-bottom: 15px; color: #ccc;">
-                            Sistem pemantauan dan peringatan batas kecepatan kendaraan di area tambang (PT. Satnetcom).
+                            Sistem pemantauan dan peringatan batas kecepatan kendaraan (Speed Awareness Monitor) yang dikembangkan saat bertugas di <strong>PT. Satnetcom</strong> untuk meningkatkan keselamatan operasional di area tambang.
                         </p>
+
                         <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 15px;">
                             <div style="overflow: hidden; border-radius: 4px; border: 1px solid #333; height: 130px;">
-                                <img src="images/sam_unit.JPG" alt="Unit SAM" style="width: 100%; height: 100%; object-fit: cover; display: block; cursor: pointer;" onclick="openModal(this);">
+                                <img src="images/sam_unit.JPG" alt="Spesifikasi Unit Fisik SAM" style="width: 100%; height: 100%; object-fit: cover; display: block; cursor: pointer;" onclick="openModal(this);" title="Klik untuk preview">
                             </div>
                             <div style="overflow: hidden; border-radius: 4px; border: 1px solid #333; height: 130px;">
-                                <img src="images/sam_workflow.JPG" alt="Workflow SAM" style="width: 100%; height: 100%; object-fit: cover; display: block; cursor: pointer;" onclick="openModal(this);">
+                                <img src="images/sam_workflow.JPG" alt="Alur Kerja Sistem SAM" style="width: 100%; height: 100%; object-fit: cover; display: block; cursor: pointer;" onclick="openModal(this);" title="Klik untuk preview">
                             </div>
                         </div>
+
+                        <div style="background: #0d0d0d; border: 1px solid #222; padding: 12px; border-radius: 4px; margin-bottom: 15px;">
+                            <strong style="font-size: 13px; color: #00ff66; display: block; margin-bottom: 6px;"><i class="fas fa-project-diagram"></i> Alur Kerja Sistem (SAM Workflow):</strong>
+                            <ol style="font-size: 12px; color: #aaa; padding-left: 18px; line-height: 1.5;">
+                                <li><strong>Deteksi Radar:</strong> Perangkat memancarkan sinyal radar untuk mendeteksi kecepatan unit yang melintas.</li>
+                                <li><strong>Peringatan Overspeed:</strong> Jika melebihi batas, papan indikator LED menyala memperingatkan pengemudi.</li>
+                                <li><strong>Snapshot & Storage:</strong> Kamera otomatis merekam video/foto pelanggaran dan menyimpannya ke memori lokal.</li>
+                                <li><strong>Remote Host Sync:</strong> Data dikirim via Wi-Fi/GPRS ke ruang kontrol untuk analisis dan pengunduhan data (*Full Data Download*).</li>
+                            </ol>
+                        </div>
+
+                        <p style="font-size: 13px; color: #aaa; line-height: 1.6;">
+                            <strong>Cakupan Teknologi & Peran:</strong>
+                            <br>• Integrasi sensor radar kecepatan dengan display LED dot-matrix.
+                            <br>• Pemasangan kamera pengawas industri (Axis) untuk validasi visual *overspeed*.
+                            <br>• Konfigurasi sistem catu daya surya mandiri dan jaringan nirkabel di site pertambangan.
+                        </p>
                     </div>
 
-                    <!-- Proyek 5: Timbangan Otomatis SAM vs PKS -->
-                    <div class="profile-card">
+                    <!-- Proyek 5: Timbangan Otomatis SAM vs PKS - PT. Harum Agro / SAM -->
+                    <div class="profile-card" style="padding: 20px;">
                         <h3><i class="fas fa-balance-scale"></i> Timbangan Otomatis (SAM vs PKS)</h3>
                         <p style="font-size: 14px; margin-bottom: 15px; color: #ccc;">
-                            Pengembangan sistem timbangan otomatis terintegrasi dari hardware hingga software di PT. Harum Agro / SAM.
+                            Pengembangan sistem timbangan otomatis terintegrasi di <strong>PT. HARUMAgro / PT. Sumatra Agro Mandiri (SAM)</strong>. Berperan penuh sebagai <strong>Developer sekaligus Quality Control (QC)</strong> dari perancangan *hardware* hingga *software*.
                         </p>
+
                         <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 15px;">
                             <div style="overflow: hidden; border-radius: 4px; border: 1px solid #333; height: 100px;">
-                                <img src="images/timbangan1.jpg" alt="Timbangan 1" style="width: 100%; height: 100%; object-fit: cover; display: block; cursor: pointer;" onclick="openModal(this);">
+                                <img src="images/timbangan1.jpg" alt="Capture Timbangan 1" style="width: 100%; height: 100%; object-fit: cover; display: block; cursor: pointer;" onclick="openModal(this);" title="Klik untuk preview">
                             </div>
                             <div style="overflow: hidden; border-radius: 4px; border: 1px solid #333; height: 100px;">
-                                <img src="images/timbangan2.jpg" alt="Timbangan 2" style="width: 100%; height: 100%; object-fit: cover; display: block; cursor: pointer;" onclick="openModal(this);">
+                                <img src="images/timbangan2.jpg" alt="Capture Timbangan 2" style="width: 100%; height: 100%; object-fit: cover; display: block; cursor: pointer;" onclick="openModal(this);" title="Klik untuk preview">
                             </div>
                             <div style="overflow: hidden; border-radius: 4px; border: 1px solid #333; height: 100px;">
-                                <img src="images/timbangan3.jpg" alt="Timbangan 3" style="width: 100%; height: 100%; object-fit: cover; display: block; cursor: pointer;" onclick="openModal(this);">
+                                <img src="images/timbangan3.jpg" alt="Capture Timbangan 3" style="width: 100%; height: 100%; object-fit: cover; display: block; cursor: pointer;" onclick="openModal(this);" title="Klik untuk preview">
+                            </div>
+                            <div style="overflow: hidden; border-radius: 4px; border: 1px solid #333; height: 100px;">
+                                <img src="images/timbangan4.jpg" alt="Capture Timbangan 4" style="width: 100%; height: 100%; object-fit: cover; display: block; cursor: pointer;" onclick="openModal(this);" title="Klik untuk preview">
+                            </div>
+                            <div style="overflow: hidden; border-radius: 4px; border: 1px solid #333; height: 100px;">
+                                <img src="images/timbangan5.jpg" alt="Capture Timbangan 5" style="width: 100%; height: 100%; object-fit: cover; display: block; cursor: pointer;" onclick="openModal(this);" title="Klik untuk preview">
+                            </div>
+                            <div style="overflow: hidden; border-radius: 4px; border: 1px solid #333; height: 100px;">
+                                <img src="images/timbangan6.jpg" alt="Capture Timbangan 6" style="width: 100%; height: 100%; object-fit: cover; display: block; cursor: pointer;" onclick="openModal(this);" title="Klik untuk preview">
                             </div>
                         </div>
+
+                        <div style="background: #0d0d0d; border: 1px solid #222; padding: 12px; border-radius: 4px; margin-bottom: 15px;">
+                            <strong style="font-size: 13px; color: #00ff66; display: block; margin-bottom: 6px;"><i class="fas fa-clipboard-check"></i> Fitur & Alur Sistem Timbangan Otomatis:</strong>
+                            <ol style="font-size: 12px; color: #aaa; padding-left: 18px; line-height: 1.5;">
+                                <li><strong>Capture Otomatis & Data Timbang:</strong> Perekaman data kendaraan (No. Plat, Supir, Afdeling, Komoditi) serta penangkapan foto visual (*capture*) kamera atas saat timbang masuk dan keluar.</li>
+                                <li><strong>Kalkulasi Otomatis (Tara, Bruto, Netto):</strong> Perhitungan berat bersih secara presisi, jumlah janjang, serta BJR (Berat Janjang Rata-rata).</li>
+                                <li><strong>Audit Rekonsiliasi (SAM vs PKS):</strong> Pembandingan data penimbangan di stasiun SAM dengan data Pabrik Kelapa Sawit (PKS) untuk mengontrol selisih berat (*shrinkage/variance*) dan durasi waktu perjalanan.</li>
+                                <li><strong>Real-time Reporting:</strong> Pengiriman rekapitulasi laporan transaksi penimbangan otomatis langsung ke perangkat seluler (*Real-time WhatsApp Notification*).</li>
+                            </ol>
+                        </div>
+
+                        <p style="font-size: 13px; color: #aaa; line-height: 1.6;">
+                            <strong>Cakupan Tanggung Jawab (Full-Stack & QC):</strong>
+                            <br>• <strong>Hardware Integration:</strong> Integrasi jembatan timbang, sensor, dan kamera pengawas sudut atas (*top-view camera capture*).
+                            <br>• <strong>Software Development:</strong> Pembuatan aplikasi pencatatan, kalkulasi otomatis, dan modul sinkronisasi data lintas lokasi (SAM & PKS).
+                            <br>• <strong>Quality Control (QC):</strong> Pengujian ketat akurasi timbangan, stabilitas sistem, dan validasi keluaran laporan data operasional.
+                        </p>
                     </div>
 
-                    <!-- Proyek Lainnya -->
-                    <div class="profile-card" style="border: 1px dashed #444; background: #080808;">
-                        <h3><i class="fas fa-folder-open" style="color: #ffaa00;"></i> Proyek Lainnya (HRD & Logistik)</h3>
+                    <!-- Proyek Lainnya (Arsip / Handphone Rusak) -->
+                    <div class="profile-card" style="padding: 20px; border: 1px dashed #444; background: #080808;">
+                        <h3><i class="fas fa-folder-open" style="color: #ffaa00;"></i> Berbagai Proyek Pengembangan Lainnya</h3>
                         <p style="font-size: 14px; margin-bottom: 15px; color: #ccc;">
-                            Pengembangan sistem HIRIS (Aplikasi HRD), sistem logistik, dan utilitas otomasi perusahaan lainnya. Arsip dokumentasi tersimpan di perangkat seluler lama yang mengalami kerusakan.
+                            Selain proyek-proyek infrastruktur dan sistem otomatisasi di atas, terdapat banyak aplikasi dan sistem lain yang pernah dirancang dan dikembangkan secara mandiri maupun tim.
+                        </p>
+
+                        <div style="background: #0d0d0d; border: 1px solid #222; padding: 12px; border-radius: 4px; margin-bottom: 15px;">
+                            <strong style="font-size: 13px; color: #ffaa00; display: block; margin-bottom: 6px;"><i class="fas fa-laptop-code"></i> Cakupan Sistem Terdahulu:</strong>
+                            <ul style="font-size: 12px; color: #aaa; padding-left: 18px; line-height: 1.5;">
+                                <li><strong>HIRIS (Aplikasi HRD):</strong> Sistem manajemen sumber daya manusia, pencatatan absensi, dan pengelolaan data karyawan.</li>
+                                <li><strong>Sistem Logistik & Inventaris:</strong> Pengelolaan keluar-masuk barang dan pencatatan aset operasional.</li>
+                                <li><strong>Sistem Kustom Lainnya:</strong> Berbagai utilitas otomasi berbasis web dan database untuk kebutuhan operasional perusahaan.</li>
+                            </ul>
+                        </div>
+
+                        <p style="font-size: 13px; color: #888; line-height: 1.6; font-style: italic;">
+                            <i class="fas fa-info-circle"></i> Catatan: Sebagian besar dokumentasi teknis, cuplikan kode, dan foto arsip dari proyek-proyek tersebut tersimpan di perangkat seluler lama yang saat ini mengalami kerusakan/mati total.
                         </p>
                     </div>
 
@@ -223,16 +350,17 @@
         </div>
     </footer>
 
-    <!-- Modal Lightbox & CV Preview -->
+    <!-- Modal Universal untuk Lightbox & CV Preview -->
     <div id="imgModal">
         <span class="close-btn" onclick="closeModal()">&times;</span>
-        <img id="modalImg">
+        <img id="modalImg" alt="Preview Gambar">
         <div id="cvPreviewContainer">
-            <iframe src="CV_Edy_Santoso.pdf" style="width: 100%; height: 100%; border: none; border-radius: 4px;"></iframe>
+            <iframe src="CV_Edy_Santoso.pdf" style="width: 100%; height: 100%; border: none; border-radius: 4px;" title="CV Preview"></iframe>
         </div>
         <div id="modalCaption" style="text-align: center; color: #ccc; padding: 15px; font-size: 14px;"></div>
     </div>
 
+    <!-- Script Modal & Interaksi -->
     <script>
         function openModal(imgElement) {
             var modal = document.getElementById("imgModal");
