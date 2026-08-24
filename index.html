@@ -3,371 +3,272 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edy Santoso | Senior IT Infrastructure Engineer</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Edy_Santoso | Portfolio - IT Infrastructure & DevOps Engineer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS Dasar untuk Portofolio */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Arial', sans-serif; background-color: #0b0b0b; color: #e0e0e0; line-height: 1.6; }
+        .container { width: 90%; max-width: 1200px; margin: 0 auto; }
+        .text-center { text-align: center; }
+        
+        /* Header & Navigasi */
+        header { background: #111; border-bottom: 1px solid #222; padding: 15px 0; position: sticky; top: 0; z-index: 1000; }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { color: #fff; font-size: 20px; font-weight: bold; text-decoration: none; }
+        .logo span { color: #00ff66; }
+        .nav-pdf-btn { background: #00ff66; color: #000; padding: 8px 15px; border-radius: 4px; text-decoration: none; font-weight: bold; font-size: 14px; transition: 0.3s; }
+        .nav-pdf-btn:hover { background: #00cc52; }
+
+        /* Hero Section */
+        .hero { padding: 80px 0; background: linear-gradient(135deg, #111 0%, #050505 100%); border-bottom: 1px solid #222; }
+        .hero h1 { font-size: 42px; color: #fff; margin-bottom: 10px; letter-spacing: 2px; }
+        .hero h2 { font-size: 20px; color: #00ff66; margin-bottom: 5px; }
+        .hero h3 { font-size: 14px; color: #888; margin-bottom: 20px; }
+        .hero-summary { max-width: 800px; margin: 0 auto; color: #aaa; font-size: 15px; }
+
+        /* Section */
+        .section { padding: 60px 0; }
+        .section-title { font-size: 26px; color: #fff; text-align: center; margin-bottom: 40px; position: relative; }
+        .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: #00ff66; margin: 10px auto 0 auto; }
+
+        /* Profile & Projects Grid */
+        .profile-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
+        .profile-card { background: #141414; border: 1px solid #222; border-radius: 8px; padding: 25px; transition: 0.3s; }
+        .profile-card:hover { border-color: #00ff66; box-shadow: 0 4px 20px rgba(0, 255, 102, 0.1); }
+        .profile-card h3 { color: #fff; font-size: 18px; margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
+        .profile-card h3 i { color: #00ff66; }
+
+        /* Footer */
+        footer { background: #0a0a0a; color: #888; padding: 40px 0 20px 0; border-top: 1px solid #1a1a1a; }
+        
+        /* Modal Lightbox */
+        #imgModal { display: none; position: fixed; z-index: 9999; padding-top: 50px; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.9); }
+        #modalImg { margin: auto; display: block; max-width: 90%; max-height: 85vh; border-radius: 4px; border: 1px solid #333; }
+        #cvPreviewContainer { display: none; width: 85%; height: 82vh; margin: auto; }
+        .close-btn { position: absolute; top: 20px; right: 35px; color: #00ff66; font-size: 40px; font-weight: bold; cursor: pointer; }
+    </style>
 </head>
 <body>
 
-    <!-- Navigation Bar -->
+    <!-- Header & Logo Minimalis -->
     <header>
         <div class="container nav-container">
-            <a href="#" class="logo">Edy Santoso<span>.dev</span></a>
+            <a href="#" class="logo">Edy_Santoso<span>.dev</span></a>
             <nav>
                 <ul>
-                    <li><a href="#profile">Profil</a></li>
-                    <li><a href="#skills">Keahlian</a></li>
-                    <li><a href="#experience">Pengalaman</a></li>
-                    <li><a href="#education">Pendidikan</a></li>
-                    <li><a href="#contact">Kontak</a></li>
+                    <li>
+                        <a href="CV_Edy_Santoso.pdf" target="_blank" class="nav-pdf-btn">
+                            <i class="fas fa-file-pdf"></i> Buka CV
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container hero-content">
-            <h1>EDY SANTOSO</h1>
-            <h2>SENIOR IT INFRASTRUCTURE ENGINEER</h2>
-            <h3>(DEVOPS, NETWORK & HARDWARE)</h3>
-            <p class="hero-summary">
-                Profesional IT berpengalaman luas dalam pengelolaan infrastruktur sistem, otomatisasi berbasis Python, serta pengembangan alur kerja DevOps[cite: 2]. Memiliki keahlian mendalam dalam konfigurasi Network Engineering serta pemeliharaan dan troubleshooting perangkat keras komputer[cite: 2].
-            </p>
-            <div class="hero-buttons">
-                <a href="#contact" class="btn primary"><i class="fas fa-envelope"></i> Hubungi Saya</a>
-                <a href="https://github.com/edysant0s0" target="_blank" class="btn secondary"><i class="fab fa-github"></i> GitHub</a>
-                <a href="https://linkedin.com/in/edysant0s0" target="_blank" class="btn secondary"><i class="fab fa-linkedin"></i> LinkedIn</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Profile & Information Section -->
-    <section id="profile" class="section">
-        <div class="container">
-            <h2 class="section-title">Ringkasan Profil & Informasi</h2>
-            <div class="profile-grid">
-                <div class="profile-card">
-                    <h3><i class="fas fa-user-circle"></i> Informasi Pribadi</h3>
-                    <ul>
-                        <li><strong>Tempat, Tgl Lahir:</strong> Balikpapan, 31 Desember 1994</li>
-                        <li><strong>Alamat:</strong> Jl. Letjen Suprapto, No. 28, RT. 16, Kel. Baru Ulu, Kec. Balikpapan Barat, Kota Balikpapan, Kalimantan Timur, 76133</li>
-                        <li><strong>Bahasa:</strong> Indonesia (Aktif/Lancar), Inggris (Pasif/Pemahaman)</li>
-                    </ul>
-                </div>
-                <div class="profile-card">
-                    <h3><i class="fas fa-briefcase"></i> Fokus Kompetensi</h3>
-                    <p>
-                        Mampu menjembatani kebutuhan teknis dan operasional secara efisien dan andal melalui integrasi sistem, otomatisasi jaringan, manajemen server, dan pemeliharaan infrastruktur lapangan skala besar[cite: 2].
-                    </p>
+    <!-- Konten Utama -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container text-center">
+                <h1>EDY_SANTOSO</h1>
+                <h2>SENIOR IT INFRASTRUCTURE ENGINEER</h2>
+                <h3>(DEVOPS, NETWORK & HARDWARE)</h3>
+                <p class="hero-summary">
+                    Selamat datang di portal personal saya. Spesialis dalam pengelolaan infrastruktur server Linux/Windows, otomatisasi berbasis Python/DevOps, routing jaringan, serta pemeliharaan hardware dan sistem IT.
+                </p>
+                <div style="margin-top: 25px;">
+                    <a href="#cv-preview" onclick="openCvModal(); return false;" class="btn-secondary" style="display: inline-block; padding: 10px 20px; background: transparent; color: #00ff66; border: 1px solid #00ff66; text-decoration: none; border-radius: 4px;"><i class="fas fa-eye"></i> Preview CV</a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Detailed Skills Section -->
-    <section id="skills" class="section bg-light">
-        <div class="container">
-            <h2 class="section-title">Keterampilan Teknis</h2>
-            <div class="skills-category-grid">
-
-                <div class="skill-category-card">
-                    <h3><i class="fas fa-server"></i> DevOps, System & Server Admin</h3>
-                    <div class="tags">
-                        <span>Linux Server Administration</span><span>Docker</span><span>Kubernetes</span>
-                        <span>CI/CD Pipelines</span><span>Git</span><span>Ansible</span><span>Terraform</span>
-                        <span>PM2</span><span>NGINX</span><span>Apache</span><span>Proxmox VE</span><span>VMware ESXi</span>
-                        <span>Windows Server Administration</span><span>Active Directory (AD DS)</span><span>Group Policy Object (GPO)</span>
-                    </div>
-                </div>
-
-                <div class="skill-category-card">
-                    <h3><i class="fas fa-code"></i> Development, Automation & Database</h3>
-                    <div class="tags">
-                        <span>Python 3</span><span>Flask</span><span>FastAPI</span><span>Django</span><span>SQLAlchemy</span>
-                        <span>RESTful API Development</span><span>OOP</span><span>Asyncio</span><span>Alembic</span><span>PyTest</span>
-                        <span>Jinja2 Templating</span><span>PYPDF2</span><span>FPDF</span><span>OpenPyXL</span><span>Pandas</span>
-                        <span>Web Scraping (BeautifulSoup, Selenium, Playwright)</span><span>PySerial</span><span>Socket Programming</span>
-                        <span>Virtualenv</span><span>Poetry</span><span>PowerShell Scripting</span>
-                        <span>PostgreSQL</span><span>MySQL</span><span>SQL Server</span><span>ELK Stack</span><span>SQLite</span><span>Redis</span><span>Grafana</span>
-                    </div>
-                </div>
-
-                <div class="skill-category-card">
-                    <h3><i class="fas fa-network-wired"></i> Network Engineering & ISP Infrastructure</h3>
-                    <div class="tags">
-                        <span>Advanced Routing & Switching</span><span>BGP</span><span>OSPF</span><span>VLAN Configuration</span>
-                        <span>MikroTik RouterOS</span><span>Cisco IOS</span><span>Fortinet Firewall</span><span>Network Troubleshooting</span>
-                        <span>Network Operation Center (NOC)</span><span>Wireshark</span><span>Zabbix</span><span>PRTG</span><span>SNMP</span><span>Cacti</span><span>Nagios</span>
-                        <span>Bandwidth Management</span><span>Fiber Optic Network</span><span>GPON/EPON Technology</span><span>Traffic Engineering</span>
-                        <span>Ubiquiti UniFi</span><span>Switch Management</span><span>VPN Tunneling (WireGuard, IPsec, OpenVPN)</span><span>Load Balancing</span><span>MikroTik Scripting</span>
-                    </div>
-                </div>
-
-                <div class="skill-category-card">
-                    <h3><i class="fas fa-microchip"></i> Hardware, IoT & Industrial Integration</h3>
-                    <div class="tags">
-                        <span>Hardware Troubleshooting</span><span>Server Maintenance</span><span>PC & Laptop Repair</span><span>Printer Maintenance</span><span>CUPS Print Server</span>
-                        <span>IoT System Architecture</span><span>ESP32</span><span>ESP8266</span><span>Arduino</span><span>Raspberry Pi</span><span>MQTT Protocol</span><span>Modbus RS485</span>
-                        <span>ESP-NOW</span><span>LoRaWAN</span><span>Circuit & Board Design</span><span>Soldering & Electronic Repair</span>
-                        <span>Power Management</span><span>DC-DC Converters</span><span>Battery Charging Systems</span><span>Solar Charging Systems / Panel Suria</span>
-                    </div>
-                </div>
-
-                <div class="skill-category-card">
-                    <h3><i class="fas fa-desktop"></i> Software & Tools Produktivitas</h3>
-                    <div class="tags">
-                        <span>Microsoft Word</span><span>Microsoft Excel (Pivot Table, VLOOKUP, XLOOKUP, Formula Kompleks)</span>
-                        <span>Microsoft PowerPoint</span><span>Microsoft Outlook</span><span>Microsoft Access</span><span>Microsoft Teams & OneDrive</span>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Work Experience Section -->
-    <section id="experience" class="section">
-        <div class="container">
-            <h2 class="section-title">Pengalaman Kerja</h2>
-            <div class="experience-timeline">
-
-                <!-- HARUMagro -->
-                <div class="exp-card">
-                    <div class="exp-header">
-                        <div>
-                            <h3 class="exp-role">Senior Assistant IT (Perkebunan)</h3>
-                            <h4 class="exp-company"><i class="fas fa-building"></i> HARUMagro — Mandiangin, Sarolangun, Indonesia</h4>
-                        </div>
-                        <div class="exp-badge">Desember 2022 - Agustus 2026 (3 thn 9 bln)</div>
-                    </div>
-                    <div class="exp-body">
-                        <h5>Dukungan Teknis & Operasional IT (Technical & User Support)</h5>
-                        <ul>
-                            <li>Memberikan dukungan teknis harian (end-user support) terkait kendala perangkat keras, perangkat lunak, jaringan, serta aplikasi operasional[cite: 2].</li>
-                            <li>Melakukan instalasi, konfigurasi, optimasi, dan pemeliharaan berkala pada seluruh hardware dan software perusahaan[cite: 2].</li>
+        <!-- Section Ringkasan Profil -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">Informasi Profil</h2>
+                <div style="max-width: 900px; margin: 0 auto;">
+                    <div class="profile-card">
+                        <h3><i class="fas fa-user-tie"></i> Ringkasan Profesional</h3>
+                        <p style="margin-bottom: 12px;">
+                            Seorang profesional senior di bidang IT Infrastructure & DevOps dengan rekam jejak mendalam dalam merancang, mengimplementasikan, dan mengamankan ekosistem sistem skala menengah hingga besar. Memiliki keahlian multidisiplin yang menggabungkan manajemen server tingkat lanjut, otomasi skrip, rekayasa jaringan, serta pemeliharaan perangkat keras industri secara presisi.
+                        </p>
+                        <p style="margin-bottom: 12px;">
+                            <strong>Kompetensi Inti & Keahlian Teknis:</strong>
+                        </p>
+                        <ul style="list-style-type: square; padding-left: 20px; color: #999;">
+                            <li style="margin-bottom: 6px;"><strong>Infrastruktur & Server:</strong> Manajemen sistem operasi Linux (Debian/Ubuntu) dan Windows Server, penataan layanan jaringan (CUPS Print Server, Docker, PM2), serta pemeliharaan server tingkat lanjut.</li>
+                            <li style="margin-bottom: 6px;"><strong>Otomasi & Software Development:</strong> Pembuatan skrip otomatisasi operasional dan pengembangan aplikasi web menggunakan bahasa pemrograman Python, framework Flask, serta integrasi basis data (SQLite/SQL Server).</li>
+                            <li style="margin-bottom: 6px;"><strong>Networking & Traffic Engineering:</strong> Konfigurasi routing tingkat lanjut, perancangan sistem Multi-WAN Load Balancing, failover, serta pengamanan jaringan menggunakan perangkat MikroTik dan infrastruktur pendukungnya.</li>
+                            <li><strong>Hardware & Maintenance:</strong> Mengatasi kompleksitas masalah perangkat keras komputer, perbaikan mesin cetak (printer industri/kantor), hingga integrasi sistem daya dan perangkat IoT.</li>
                         </ul>
-
-                        <h5>Manajemen Jaringan & Infrastruktur Telekomunikasi</h5>
-                        <ul>
-                            <li>Mengelola, mengonfigurasi, dan memelihara infrastruktur jaringan komputer serta perangkat telekomunikasi pendukung[cite: 2].</li>
-                            <li>Memantau performa, trafik, dan ketersediaan jaringan secara rutin guna menjamin keandalan serta stabilitas akses data[cite: 2].</li>
-                        </ul>
-
-                        <h5>Pengembangan Aplikasi Operasional Berbasis Pengguna (Human-Centric Development)</h5>
-                        <ul>
-                            <li>Merancang dan mengembangkan Aplikasi Timbang serta Aplikasi Absensi yang fleksibel dan ramah pengguna (user-friendly)[cite: 2].</li>
-                            <li>Memastikan aplikasi memfasilitasi kebutuhan verifikasi lapangan secara praktis tanpa menyulitkan alur kerja harian staf operasional[cite: 2].</li>
-                        </ul>
-
-                        <h5>Pengembangan Aplikasi & Bot Integrasi (SysAdmin / DevOps)</h5>
-                        <ul>
-                            <li>Merancang, mengembangkan, dan memelihara bot WhatsApp operasional untuk otomatisasi aliran informasi perusahaan secara real-time[cite: 2].</li>
-                            <li>Mengintegrasikan bot via API dan basis data ke berbagai sistem internal seperti Timbang, HRD (Absensi), Logistik, dan Traksi/Operasional Armada[cite: 2].</li>
-                            <li>Melaksanakan tahap pengujian (testing), pembenahan bug (debugging), serta memberikan pendampingan dan dukungan pasca-implementasi[cite: 2].</li>
-                        </ul>
-
-                        <h5>Pengelolaan Data, File Server & Keandalan Basis Data</h5>
-                        <ul>
-                            <li>Bertanggung jawab atas prosedur backup data berkala, pengelolaan file server, serta keamanan data kritikal perusahaan[cite: 2].</li>
-                            <li>Melakukan pemeliharaan dan pengawasan server database guna menjaga integritas, ketersediaan, serta kerahasiaan informasi[cite: 2].</li>
-                        </ul>
-
-                        <h5>Manajemen Proyek, Dokumen, Vendor & Efisiensi</h5>
-                        <ul>
-                            <li>Berpartisipasi aktif dalam proyek migrasi sistem, implementasi perangkat lunak baru, pembaruan infrastruktur IT, dan estimasi anggaran[cite: 2].</li>
-                            <li>Menyusun dokumentasi teknis internal, memberikan user training, serta berkoordinasi dengan vendor eksternal untuk pengadaan dan lisensi[cite: 2].</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- PT. AGB -->
-                <div class="exp-card">
-                    <div class="exp-header">
-                        <div>
-                            <h3 class="exp-role">IT DevOps</h3>
-                            <h4 class="exp-company"><i class="fas fa-building"></i> PT. AGB — DKI Jakarta, Jakarta Utara, Indonesia</h4>
-                        </div>
-                        <div class="exp-badge">April 2021 - Juli 2022 (1 thn 4 bln)</div>
-                    </div>
-                    <div class="exp-body">
-                        <h5>Pengembangan & Manajemen Server (DevOps)</h5>
-                        <ul>
-                            <li>Membangun, mengonfigurasi, dan mengelola server aplikasi berbasis Linux untuk memastikan uptime dan kinerja optimal[cite: 2].</li>
-                            <li>Melakukan integrasi server dengan berbagai API/layanan pihak ketiga (third-party services) sesuai kebutuhan arsitektur sistem[cite: 2].</li>
-                        </ul>
-
-                        <h5>Keamanan Jaringan, Akses & Otomatisasi Bot</h5>
-                        <ul>
-                            <li>Mengimplementasikan proxy management dan pengaturan routing jaringan serta mengelola koneksi VPN client[cite: 2].</li>
-                            <li>Mengembangkan bot notifikasi dan automasi komunikasi berbasis WhatsApp API dan Telegram API[cite: 2].</li>
-                        </ul>
-
-                        <h5>Data Pipeline, Keandalan Database & Logging</h5>
-                        <ul>
-                            <li>Mengembangkan mekanisme data collection dan parsing data otomatis untuk kebutuhan analisis sistem[cite: 2].</li>
-                            <li>Mengelola server database termasuk konfigurasi replication/mirroring untuk redundansi dan high availability[cite: 2].</li>
-                            <li>Mengimplementasikan pemantauan real-time terhadap aktivitas server, kesehatan aplikasi, dan analisis log berkala[cite: 2].</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- PT. Bina Sarana Sukses (BSS) -->
-                <div class="exp-card">
-                    <div class="exp-header">
-                        <div>
-                            <h3 class="exp-role">IT Network System Administration</h3>
-                            <h4 class="exp-company"><i class="fas fa-building"></i> PT. Bina Sarana Sukses (BSS) — Samarinda, Indonesia</h4>
-                        </div>
-                        <div class="exp-badge">Maret 2017 - Agustus 2020 (3 thn 6 bln)</div>
-                    </div>
-                    <div class="exp-body">
-                        <h5>Administrasi Sistem & Infrastruktur Operasional</h5>
-                        <ul>
-                            <li>Membangun, mengonfigurasi, dan memelihara server berbasis Linux/Windows serta infrastruktur IT (PC, jaringan, CCTV)[cite: 2].</li>
-                            <li>Merancang dan menginstalasi jaringan fisik maupun nirkabel (UTP, Fiber Optic, Access Point) serta integrasi catu daya panel surya (solar cell)[cite: 2].</li>
-                        </ul>
-
-                        <h5>Pemantauan, Keamanan & Maintenance Database</h5>
-                        <ul>
-                            <li>Memantau kinerja jaringan dan server secara real-time via log, SNMP, remote CLI/GUI, serta tools Cacti dan Nagios[cite: 2].</li>
-                            <li>Melakukan root cause analysis, segmentasi VLAN, penerapakan RBAC, firewall, dan mitigasi risiko keamanan[cite: 2].</li>
-                            <li>Mengelola server database (query optimization, shrink database, verifikasi) untuk mendukung data karyawan, absensi, dan penggajian[cite: 2].</li>
-                            <li>Mengoordinasikan tim teknisi IT hardware & network multi-site di lokasi lapangan sesuai SOP[cite: 2].</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- PT. COMTELINDO -->
-                <div class="exp-card">
-                    <div class="exp-header">
-                        <div>
-                            <h3 class="exp-role">Network Operation Center (NOC)</h3>
-                            <h4 class="exp-company"><i class="fas fa-building"></i> PT. COMTELINDO — Balikpapan, Indonesia</h4>
-                        </div>
-                        <div class="exp-badge">Maret 2016 - Maret 2017 (1 thn 1 bln)</div>
-                    </div>
-                    <div class="exp-body">
-                        <ul>
-                            <li>Melakukan instalasi, konfigurasi, dan komisioning Access Point serta router di lokasi pelanggan ISP[cite: 2].</li>
-                            <li>Memantau ketersediaan dan performa jaringan secara real-time via SNMP, log sistem, dan notifikasi alerting email[cite: 2].</li>
-                            <li>Mengonfigurasi dan mengelola router BGP serta MPLS untuk mendukung infrastruktur routing backbone dan distribusi ISP[cite: 2].</li>
-                            <li>Melakukan preventive maintenance perangkat jaringan dan mengelola data inventaris aset teknis[cite: 2].</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- PT. SatNetCom -->
-                <div class="exp-card">
-                    <div class="exp-header">
-                        <div>
-                            <h3 class="exp-role">Senior Network Engineer</h3>
-                            <h4 class="exp-company"><i class="fas fa-building"></i> PT. SatNetCom Balikpapan — Balikpapan, Indonesia</h4>
-                        </div>
-                        <div class="exp-badge">Januari 2014 - Maret 2016 (2 thn 3 bln)</div>
-                    </div>
-                    <div class="exp-body">
-                        <ul>
-                            <li>Instalasi dan konfigurasi router & Access Point untuk menjamin ketersediaan tinggi (high availability) dan skalabilitas[cite: 2].</li>
-                            <li>Mengonfigurasi BGP routing antar Autonomous System (AS) dan arsitektur MPLS ISP dengan pengaturan QoS[cite: 2].</li>
-                            <li>Mengintegrasikan berbagai mesin operasional lapangan (FMS, AAG, Fuel Management, VHMS, OTA AP, MineLink, SAM) ke sistem terpusat via API[cite: 2].</li>
-                            <li>Menerapkan otomatisasi deployment, pengujian network controller, dan penyusunan dokumentasi topologi SOP[cite: 2].</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- PT. PINARAS RAYA ABADI -->
-                <div class="exp-card">
-                    <div class="exp-header">
-                        <div>
-                            <h3 class="exp-role">IT Support</h3>
-                            <h4 class="exp-company"><i class="fas fa-building"></i> PT. PINARAS RAYA ABADI — Balikpapan, Indonesia</h4>
-                        </div>
-                        <div class="exp-badge">Januari 2013 - Januari 2014 (1 thn 1 bln)</div>
-                    </div>
-                    <div class="exp-body">
-                        <ul>
-                            <li>Pemasangan, konfigurasi, penarikan kabel, dan troubleshooting sistem CCTV (Kamera, DVR/NVR)[cite: 2].</li>
-                            <li>Instalasi dan optimasi OS Windows/Linux, user management, dan system update[cite: 2].</li>
-                            <li>Pembangunan infrastruktur jaringan LAN & Fiber Optic (penarikan kabel, splicing, testing & commissioning)[cite: 2].</li>
-                            <li>Perbaikan hardware/software PC, laptop, serta dukungan end-user support harian[cite: 2].</li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education" class="section bg-light">
-        <div class="container">
-            <h2 class="section-title">Pendidikan</h2>
-            <div class="education-grid">
-                <div class="edu-card">
-                    <i class="fas fa-graduation-cap edu-icon"></i>
-                    <h3>Manajemen Informatika</h3>
-                    <h4>STIMIK WICIDA Samarinda</h4>
-                    <p class="edu-year">Lulus Tahun 2017</p>
-                </div>
-                <div class="edu-card">
-                    <i class="fas fa-school edu-icon"></i>
-                    <h3>Teknik Komputer Dan Jaringan (TKJ)</h3>
-                    <h4>SMK Ibnu Khaldun</h4>
-                    <p class="edu-year">Lulus Tahun 2024</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-        <div class="container">
-            <h2 class="section-title">Kontak & Informasi Media Sosial</h2>
-            <div class="contact-card-container">
-                <div class="contact-info-block">
-                    <div class="contact-item-row">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <strong>Email:</strong><br>
-                            <a href="mailto:edy.santoso1994@gmail.com">edy.santoso1994@gmail.com</a>
-                        </div>
-                    </div>
-                    <div class="contact-item-row">
-                        <i class="fas fa-phone-alt"></i>
-                        <div>
-                            <strong>Telepon / WhatsApp:</strong><br>
-                            <a href="https://wa.me/6281350015220" target="_blank">081350015220</a>
-                        </div>
-                    </div>
-                    <div class="contact-item-row">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <strong>Alamat Utama:</strong><br>
-                            Jl. Letjen Suprapto No.28, RT.16, Kel. Baru Ulu, Kec. Balikpapan Barat, Kota Balikpapan, Kalimantan Timur, 76133
-                        </div>
-                    </div>
-                </div>
-
-                <div class="contact-social-block">
-                    <h3>Media Sosial & Portofolio Kode</h3>
-                    <div class="social-links-grid">
-                        <a href="https://linkedin.com/in/edysant0s0" target="_blank" class="social-btn linkedin"><i class="fab fa-linkedin"></i> LinkedIn (edysant0s0)</a>
-                        <a href="https://github.com/edysant0s0" target="_blank" class="social-btn github"><i class="fab fa-github"></i> GitHub (edysant0s0)</a>
-                        <a href="https://instagram.com/edysant0s0" target="_blank" class="social-btn instagram"><i class="fab fa-instagram"></i> Instagram (edysant0s0)</a>
-                        <a href="https://facebook.com/edysant0s0" target="_blank" class="social-btn facebook"><i class="fab fa-facebook"></i> Facebook (edysant0s0)</a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Section Galeri Dokumentasi Proyek -->
+        <section id="projects" class="section">
+            <div class="container">
+                <h2 class="section-title">Dokumentasi & Implementasi Proyek</h2>
+                <div class="profile-grid">
+                    
+                    <!-- Proyek 1: FMS Senopati -->
+                    <div class="profile-card">
+                        <h3><i class="fas fa-server"></i> Fleet Management System (FMS) "Senopati"</h3>
+                        <p style="font-size: 14px; margin-bottom: 15px; color: #ccc;">
+                            Perancangan infrastruktur server, pengujian lapangan, pelatihan karyawan, hingga tahap *go-live* untuk sistem Fleet Management System (FMS) bernama <strong>Senopati</strong> di PAMA Kide Site Batukajang.
+                        </p>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; margin-bottom: 15px;">
+                            <div style="overflow: hidden; border-radius: 4px; border: 1px solid #333; height: 110px;">
+                                <img src="images/fms_server.jpg" alt="Perapian Server FMS" style="width: 100%; height: 100%; object-fit: cover; display: block; cursor: pointer;" onclick="openModal(this);">
+                            </div>
+                            <div style="overflow: hidden; border-radius: 4px; border: 1px solid #333; height: 110px;">
+                                <img src="images/fms_trial.jpg" alt="Trial Unit Lapangan" style="width: 100%; height: 100%; object-fit: cover; display: block; cursor: pointer;" onclick="openModal(this);">
+                            </div>
+                            <div style="overflow: hidden; border-radius: 4px; border: 1px solid #333; height: 110px;">
+                                <img src="images/fms_monitoring.jpg" alt="Monitoring Screen & Control Room" style="width: 100%; height: 100%; object-fit: cover; display: block; cursor: pointer;" onclick="openModal(this);">
+                            </div>
+                            <div style="overflow: hidden; border-radius: 4px; border: 1px solid #333; height: 110px;">
+                                <img src="images/fms_training.jpg" alt="Pembimbingan Karyawan" style="width: 100%; height: 100%; object-fit: cover; display: block; cursor: pointer;" onclick="openModal(this);">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Proyek 2: MOSENTO BSS -->
+                    <div class="profile-card">
+                        <h3><i class="fas fa-microchip"></i> MOSENTO (Monitoring Kesehatan Unit)</h3>
+                        <p style="font-size: 14px; margin-bottom: 15px; color: #ccc;">
+                            Pengembangan sistem VHMS Check otomatis bernama <strong>MOSENTO</strong> di PT. Bina Sarana Sukses (BSS).
+                        </p>
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 15px;">
+                            <div style="overflow: hidden; border-radius: 4px; border: 1px solid #333; height: 120px;">
+                                <img src="images/perakitan.jpg" alt="Perakitan Hardware Mosento" style="width: 100%; height: 100%; object-fit: cover; display: block; cursor: pointer;" onclick="openModal(this);">
+                            </div>
+                            <div style="overflow: hidden; border-radius: 4px; border: 1px solid #333; height: 120px;">
+                                <img src="images/Meeting.jpg" alt="Meeting Koordinasi Tim" style="width: 100%; height: 100%; object-fit: cover; display: block; cursor: pointer;" onclick="openModal(this);">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Proyek 3: Fuel Management System -->
+                    <div class="profile-card">
+                        <h3><i class="fas fa-gas-pump"></i> Fuel Management System (FMS)</h3>
+                        <p style="font-size: 14px; margin-bottom: 15px; color: #ccc;">
+                            Pengembangan sistem manajemen bahan bakar terintegrasi dengan verifikasi RFID dan cetak struk otomatis.
+                        </p>
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 15px;">
+                            <div style="overflow: hidden; border-radius: 4px; border: 1px solid #333; height: 120px;">
+                                <img src="images/Perakitan_fms.jpg" alt="Perakitan Hardware FMS" style="width: 100%; height: 100%; object-fit: cover; display: block; cursor: pointer;" onclick="openModal(this);">
+                            </div>
+                            <div style="overflow: hidden; border-radius: 4px; border: 1px solid #333; height: 120px;">
+                                <img src="images/Go-Live_fms.jpg" alt="Go-Live FMS" style="width: 100%; height: 100%; object-fit: cover; display: block; cursor: pointer;" onclick="openModal(this);">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Proyek 4: Speed Awareness Monitor (SAM) -->
+                    <div class="profile-card">
+                        <h3><i class="fas fa-tachometer-alt"></i> Speed Awareness Monitor (SAM)</h3>
+                        <p style="font-size: 14px; margin-bottom: 15px; color: #ccc;">
+                            Sistem pemantauan dan peringatan batas kecepatan kendaraan di area tambang (PT. Satnetcom).
+                        </p>
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 15px;">
+                            <div style="overflow: hidden; border-radius: 4px; border: 1px solid #333; height: 130px;">
+                                <img src="images/sam_unit.JPG" alt="Unit SAM" style="width: 100%; height: 100%; object-fit: cover; display: block; cursor: pointer;" onclick="openModal(this);">
+                            </div>
+                            <div style="overflow: hidden; border-radius: 4px; border: 1px solid #333; height: 130px;">
+                                <img src="images/sam_workflow.JPG" alt="Workflow SAM" style="width: 100%; height: 100%; object-fit: cover; display: block; cursor: pointer;" onclick="openModal(this);">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Proyek 5: Timbangan Otomatis SAM vs PKS -->
+                    <div class="profile-card">
+                        <h3><i class="fas fa-balance-scale"></i> Timbangan Otomatis (SAM vs PKS)</h3>
+                        <p style="font-size: 14px; margin-bottom: 15px; color: #ccc;">
+                            Pengembangan sistem timbangan otomatis terintegrasi dari hardware hingga software di PT. Harum Agro / SAM.
+                        </p>
+                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 15px;">
+                            <div style="overflow: hidden; border-radius: 4px; border: 1px solid #333; height: 100px;">
+                                <img src="images/timbangan1.jpg" alt="Timbangan 1" style="width: 100%; height: 100%; object-fit: cover; display: block; cursor: pointer;" onclick="openModal(this);">
+                            </div>
+                            <div style="overflow: hidden; border-radius: 4px; border: 1px solid #333; height: 100px;">
+                                <img src="images/timbangan2.jpg" alt="Timbangan 2" style="width: 100%; height: 100%; object-fit: cover; display: block; cursor: pointer;" onclick="openModal(this);">
+                            </div>
+                            <div style="overflow: hidden; border-radius: 4px; border: 1px solid #333; height: 100px;">
+                                <img src="images/timbangan3.jpg" alt="Timbangan 3" style="width: 100%; height: 100%; object-fit: cover; display: block; cursor: pointer;" onclick="openModal(this);">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Proyek Lainnya -->
+                    <div class="profile-card" style="border: 1px dashed #444; background: #080808;">
+                        <h3><i class="fas fa-folder-open" style="color: #ffaa00;"></i> Proyek Lainnya (HRD & Logistik)</h3>
+                        <p style="font-size: 14px; margin-bottom: 15px; color: #ccc;">
+                            Pengembangan sistem HIRIS (Aplikasi HRD), sistem logistik, dan utilitas otomasi perusahaan lainnya. Arsip dokumentasi tersimpan di perangkat seluler lama yang mengalami kerusakan.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer>
         <div class="container text-center">
-            <p>&copy; 2026 Edy Santoso. Senior IT Infrastructure Engineer. All Rights Reserved.</p>
+            <p>&copy; 2026 Edy_Santoso. All Rights Reserved.</p>
         </div>
     </footer>
 
+    <!-- Modal Lightbox & CV Preview -->
+    <div id="imgModal">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <img id="modalImg">
+        <div id="cvPreviewContainer">
+            <iframe src="CV_Edy_Santoso.pdf" style="width: 100%; height: 100%; border: none; border-radius: 4px;"></iframe>
+        </div>
+        <div id="modalCaption" style="text-align: center; color: #ccc; padding: 15px; font-size: 14px;"></div>
+    </div>
+
+    <script>
+        function openModal(imgElement) {
+            var modal = document.getElementById("imgModal");
+            var modalImg = document.getElementById("modalImg");
+            var cvContainer = document.getElementById("cvPreviewContainer");
+            var captionText = document.getElementById("modalCaption");
+            
+            cvContainer.style.display = "none";
+            modalImg.style.display = "block";
+            modal.style.display = "block";
+            modalImg.src = imgElement.src;
+            captionText.innerHTML = imgElement.alt;
+        }
+
+        function openCvModal() {
+            var modal = document.getElementById("imgModal");
+            var modalImg = document.getElementById("modalImg");
+            var cvContainer = document.getElementById("cvPreviewContainer");
+            var captionText = document.getElementById("modalCaption");
+            
+            modalImg.style.display = "none";
+            cvContainer.style.display = "block";
+            modal.style.display = "block";
+            captionText.innerHTML = "Preview Curriculum Vitae - Edy Santoso";
+        }
+
+        function closeModal() {
+            document.getElementById("imgModal").style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            var modal = document.getElementById("imgModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
